@@ -4,7 +4,7 @@
     <ul class='lists-right'>
       <% if user_signed_in? %>
           <div class="user_nav">
-            <%= link_to current_user.image, "#", class: "user-nickname" %>
+            <%= image_tag current_user.image, class: "icon_image" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
           </div>
         <% else %>

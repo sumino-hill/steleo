@@ -7,6 +7,9 @@
   font-size: 30px;
 }
 
-.user_nav{
-  
+.icon_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  object-fit: cover;
 }
