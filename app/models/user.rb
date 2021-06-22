@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -9,4 +10,6 @@ class User < ApplicationRecord
     validates :nickname
     validates :identification,format: { with: /\A[a-zA-Z0-9]+\z/}
     end
+    has_one_attached :image
+    belongs_to :category
 end

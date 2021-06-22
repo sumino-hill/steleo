@@ -1,11 +1,16 @@
 class LivesController < ApplicationController
   def index
-    
+  end
+
+  def new
+  end
+
+  def create
   end
 
   private
-
-  def live_params
-    params.require(:user).permit(:image,:nickname,:birthday,:image, :image_cache, :remove_image).merge(user_id: current_user.id, image: current_user.image)
+  def lives_params
+    params.require(:live).permit( :image).merge(user_id: current_user.id)
   end
+
 end
