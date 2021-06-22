@@ -9,4 +9,6 @@ class User < ApplicationRecord
     validates :nickname
     validates :identification,format: { with: /\A[a-zA-Z0-9]+\z/}
     end
+    has_one_attached :image
+
 end
