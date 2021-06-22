@@ -34,13 +34,19 @@ ActiveRecord::Schema.define(version: 2021_06_22_064853) do
   end
 
   create_table "lives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
     t.string "image", null: false
+    t.integer "category_id"
+    t.integer "atmosphere_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_lives_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
+    t.integer "category_id"
     t.string "identification", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -56,4 +62,5 @@ ActiveRecord::Schema.define(version: 2021_06_22_064853) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "lives", "users"
 end
