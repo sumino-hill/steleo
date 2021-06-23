@@ -1,8 +1,13 @@
 <%= render "shared/header" %>
 <div class='main'>
   <% if @live.image.attached? %>
-  <h1><%= @live.title %></h1> <br>
-  
-  <video src="<%= rails_blob_path(@live.image) %>" type="image/mp4" controls></video>
+  <div class='live-title'>
+  <h1><%= @live.title %></h1>
+  </div>
+  <div class='video'>
+  <video width="100%" src="<%= rails_blob_path(@live.image) %>" type="image/mp4" controls></video>
+  </div>
 <% end %>
+<div class='index-btn'>
+  <%=link_to '一覧にもどる', root_path, class:"back-btn" %>
 </div>
