@@ -17,7 +17,7 @@ class LivesController < ApplicationController
   end
 
   def show
-    
+    @live = Live.find(params[:id])
   end
 
   private

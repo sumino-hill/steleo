@@ -1,0 +1,8 @@
+<%= render "shared/header" %>
+<div class='main'>
+  <% if @live.image.attached? %>
+  <h1><%= @live.title %></h1> <br>
+  
+  <video src="<%= rails_blob_path(@live.image) %>" type="image/mp4" controls></video>
+<% end %>
+</div>
