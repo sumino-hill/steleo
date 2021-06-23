@@ -17,12 +17,12 @@ class LivesController < ApplicationController
   end
 
   def show
-    
+    @live = Live.find(params[:id])
   end
 
   private
   def live_params
-    params.require(:live).permit(:image, :title, :category_id, :atmosphere_id).merge(user_id: current_user.id)
+    params.require(:live).permit(:image, :samnail, :title, :category_id, :atmosphere_id, :user).merge(user_id: current_user.id)
   end
 
 end
