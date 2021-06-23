@@ -22,7 +22,7 @@ class LivesController < ApplicationController
 
   private
   def live_params
-    params.require(:live).permit(:image, :title, :category_id, :atmosphere_id, :user).merge(user_id: current_user.id)
+    params.require(:live).permit(:image, :samnail, :title, :category_id, :atmosphere_id, :user).merge(user_id: current_user.id)
   end
 
 end

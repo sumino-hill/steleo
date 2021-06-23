@@ -8,7 +8,16 @@
   </div>
 
   <%# render 'shared/error_messages', model: f.object %>
-
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">サムネイル画像</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.file_field :samnail %>
+    <label class="form-text">動画</label>
+    <span class="indispensable">必須</span>
+    <%= f.file_field :image %>
+  </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">タイトル</label>
@@ -31,14 +40,6 @@
         </div>
         <%= f.collection_select(:atmosphere_id, Atmosphere.all, :id, :name, {prompt: "---"}, {class:"select-box", id:"item-category"}) %>
     </div>
-  <div class="form-group">
-    <div class="field">
-      <div class='form-text-wrap'>
-        <label class="form-text">動画</label>
-        <%= f.file_field :image %>
-      </div>
-    </div>
-  </div>
   
   <div class="form-group">
     <h2 class='form-bottom-text'>
