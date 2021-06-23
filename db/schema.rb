@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2021_06_22_064853) do
 
   create_table "lives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.string "image", null: false
     t.integer "category_id"
     t.integer "atmosphere_id"
     t.bigint "user_id"
@@ -46,7 +45,6 @@ ActiveRecord::Schema.define(version: 2021_06_22_064853) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
-    t.integer "category_id"
     t.string "identification", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
