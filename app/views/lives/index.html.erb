@@ -1,7 +1,26 @@
 <%= render "shared/header" %>
+<div class = 'main'>
 <h1 class='title'>あなたにおすすめ</h1>
 <h1 class='title'>配信一覧</h1>
+<% @lives.each do |live| %>
+       <li class='list'>
+        <%= link_to lives_path(live.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag live.image, class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= live.title %>
+          </h3>
+          <div class='item-price'>
+            <span><%= live.category.name %><br><%= live.atmosphere.name %></span>
+          </div>
+        </div>
+        <% end %>
+       </li>
+<% end %>
 <%= link_to(new_life_path, class: 'post-btn') do %>
 <span class='purchase-btn-text'>投稿する</span>
 <% end %>
+</div>
 <%= render "shared/footer" %>
