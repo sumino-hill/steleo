@@ -1,34 +1,56 @@
-<%= form_with model:@live, url:lives_path, local: true do |f| %>
-  <div class="img-upload">
-      <div class="weight-bold-text">
-        投稿動画
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image, id:"item-image" %>
-      </div>
-  </div>
-  <div class="weight-bold-text">
-        タイトル
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
-  <div class="weight-bold-text">
-          カテゴリー
-    <span class="indispensable">任意</span>
-  </div>
-    <%= f.collection_select(:category_id, Category.all, :id, :name, {prompt: "---"}, {class:"select-box", id:"item-category"}) %>
-  <div class="weight-bold-text">
-          雰囲気
-    <span class="indispensable">任意</span>
-  </div>
-    <%= f.collection_select(:atmosphere, Category.all, :id, :name, {prompt: "---"}, {class:"select-box", id:"item-category"}) %>
-    <div class="sell-btn-contents">
-      <%= f.submit '出品する' ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
-    </div>
+<%= form_with model:@live, url:lives_path,id: 'new_live', class: 'registration-main', local: true do |f| %>
 
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      会員情報入力
+    </h1>
+  </div>
+
+  <%# render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">タイトル</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :title, class:"input-default", id:"nickname", placeholder:"例) furima太郎", maxlength:"40" %>
+  </div>
+  <div class="form-group">
+    <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {prompt: "---"}, {class:"select-box", id:"item-category"}) %>
+    </div>
+  <div class="form-group">
+  <div class="form-group">
+    <div class="weight-bold-text">
+          雰囲気
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:atmosphere_id, Atmosphere.all, :id, :name, {prompt: "---"}, {class:"select-box", id:"item-category"}) %>
+    </div>
+  <div class="form-group">
+    <div class="field">
+      <div class='form-text-wrap'>
+        <label class="form-text">動画</label>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <h2 class='form-bottom-text'>
+      「会員登録」のボタンを押すことにより、
+      <span>利用規約</span>
+      <br>に同意したものとみなします
+    </h2>
+  </div>
+  <div class='register-btn'>
+    <%= f.submit "投稿" ,class:"register-red-btn" %>
+  </div>
+  <p class='register-info'>本人情報の登録について</p>
+</div>
 <% end %>
+
