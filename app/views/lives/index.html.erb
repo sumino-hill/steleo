@@ -5,14 +5,14 @@
 <% @lives.each do |live| %>
        <li class='list'>
         <%= link_to life_path(live.id) do %>
-        <div class='item-img-content'>
+        <div class='live-img-content'>
           <%= image_tag live.samnail ,class: "live-img"  %> 
         </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
+        <div class='live-info'>
+          <h3 class='live-name'>
             <%= live.title %>
           </h3>
-          <div class='item-price'>
+          <div class='live-category'>
             <span><%= live.category.name %><br><%= live.atmosphere.name %></span>
           </div>
         </div>
@@ -20,7 +20,7 @@
        </li>
 <% end %>
 <%= link_to(new_life_path, class: 'post-btn') do %>
-<span class='purchase-btn-text'>投稿する</span>
+<span class='post-btn-text'>投稿する</span>
 <% end %>
 </div>
 <%= render "shared/footer" %>
