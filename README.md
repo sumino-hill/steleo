@@ -23,6 +23,27 @@ Things you may want to cover:
 
 * ...
 
+・アプリ名[steleo]
+
+・概要
+サインインしたユーザーが動画を投稿できて、誰でもその投稿動画を視聴できる。
+・制作背景(意図)
+誰でも視聴・投稿できるラジオアプリを作ろうと思った。
+課題や不便な点はspoonというアプリを参考にして、生配信でかつ入室やコメントの通知が来るため進行が難しくなっていると考え、動画形式で完成品を投稿する形にしようと思った。
+また、動画形式にすることで告知などを見やすくまとめられると考えた。
+・DEMO
+動画視聴
+[![Image from Gyazo](https://i.gyazo.com/f8375e89ce49168a77f7c2b7f5e72dc6.gif)](https://gyazo.com/f8375e89ce49168a77f7c2b7f5e72dc6)
+動画投稿
+[![Image from Gyazo](https://i.gyazo.com/b2abfca9ea530ba3bd3830b85d9b9f25.gif)](https://gyazo.com/b2abfca9ea530ba3bd3830b85d9b9f25)
+・実装予定の内容について
+youtubeでいうところのチャンネル登録機能及びマイページの実装
+動画に対するコメント欄の開設
+いいね機能や視聴回数の表示
+おすすめユーザーの表示
+idやカテゴリー別検索機能
+・DB設計
+
 ## usersテーブル
 
 | Column            | Type   | Options                 |
@@ -56,4 +77,5 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
+
 
