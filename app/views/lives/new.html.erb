@@ -3,7 +3,7 @@
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
-      会員情報入力
+      動画の投稿
     </h1>
   </div>
 
@@ -40,18 +40,10 @@
         </div>
         <%= f.collection_select(:atmosphere_id, Atmosphere.all, :id, :name, {prompt: "---"}, {class:"select-box", id:"item-category"}) %>
     </div>
-  
-  <div class="form-group">
-    <h2 class='form-bottom-text'>
-      「会員登録」のボタンを押すことにより、
-      <span>利用規約</span>
-      <br>に同意したものとみなします
-    </h2>
-  </div>
+
   <div class='register-btn'>
     <%= f.submit "投稿" ,class:"register-red-btn" %>
   </div>
-  <p class='register-info'>本人情報の登録について</p>
 </div>
 <% end %>
 

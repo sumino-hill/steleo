@@ -2,7 +2,7 @@
 <div class = 'main'>
 <h1 class='title'>あなたにおすすめ</h1>
 <h1 class='title'>配信一覧</h1>
-<% @lives.each do |live| %>
+  <% @lives.each do |live| %>
        <li class='list'>
         <%= link_to life_path(live.id) do %>
         <div class='live-img-content'>
