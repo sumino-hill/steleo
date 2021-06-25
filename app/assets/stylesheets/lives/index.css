@@ -7,10 +7,16 @@
 
 .title{
   color:#3ccace;
-  
+  font-size: 36px;
 }
 
 .live-img{
   height: 30vh;
 }
 
+.list{
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
