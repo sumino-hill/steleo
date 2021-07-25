@@ -25,7 +25,9 @@ Things you may want to cover:
 
 ・アプリ名[steleo]  
 本番環境  
-https://steleo.herokuapp.com/
+https://steleo.herokuapp.com/  
+ユーザー名:admin  
+パスワード:2222  
 
 
 
